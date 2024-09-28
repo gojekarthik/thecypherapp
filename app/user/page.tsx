@@ -7,8 +7,8 @@ import { useEffect } from "react";
 import Sidebar from "@/components/sidebar";
 import { useRecoilState } from "recoil";
 import { userDetailsAtom } from "@/states/atoms/userAtoms";
-import Timeline from "@/components/Timeline";
 import Loading from "./loading";
+import Main from "@/components/Main";
 
 
 
@@ -44,7 +44,7 @@ export default function UserHome() {
     return (
       <div className="mx-24 flex">
         <Sidebar />
-        <Timeline />
+        <Main />
       </div>
     );
   }

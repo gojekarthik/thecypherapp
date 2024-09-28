@@ -1,2 +1,0 @@
-zod validation at signin and signup
-success and fail comoponent when trying to signin and signup
