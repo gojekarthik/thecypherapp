@@ -77,7 +77,7 @@ export default function TrainingGenerator() {
               Generating...
             </>
           ) : (
-            "Generate Topic"
+            "Generate"
           )}
         </Button>
       </CardFooter>

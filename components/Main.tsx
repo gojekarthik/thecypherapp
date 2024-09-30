@@ -7,7 +7,7 @@ import DanceMetronome from './metronome'
 const Main : React.FC = () => {
   const mainComponent = useRecoilValue(mainNavigationAtom)
   if(mainComponent==="Training Session"){
-    return <div className='w-4/5 border border-r-2'>
+    return <div className='flex h-1/2 mt-32 w-4/5 border border-r-2'>
     <TrainingGenerator />
     <DanceMetronome />
   </div>
