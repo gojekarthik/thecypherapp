@@ -18,4 +18,5 @@ export const userDetailsAtom  = atom({
         image:"#" || null || undefined,
         name:"John Doe" || null || undefined
     }
+    
 })

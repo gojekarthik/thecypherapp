@@ -2,7 +2,7 @@
 
 import { NextResponse } from "next/server";
 import * as bcrypt from 'bcryptjs'
-import {prisma} from '@/prisma/index'
+import {prisma} from '@/app/lib'
 
 export async function POST(request:Request){
  try{ const data = await request.json()

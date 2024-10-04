@@ -21,6 +21,7 @@ import { signUpInputsAtom } from "@/states/atoms/userAtoms";
 import axios from "axios";
 import {signIn, useSession} from "next-auth/react"
 import { useRouter } from "next/navigation";
+import { api_url } from "@/utils/const";
 
 
 
@@ -34,7 +35,7 @@ export default function Register() {
     console.log("commmand reaches handle")
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/signup",
+        `${api_url}api/auth/signup`,
         signInInputs
       );
       if(response.status===200){
