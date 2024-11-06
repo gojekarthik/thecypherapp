@@ -17,6 +17,7 @@ export async function POST(request:Request){
       h_password:h_password
     }
   })
+  
   return NextResponse.json({msg:"created succesfully"})
 }catch(e){
     console.log(e)

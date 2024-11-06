@@ -38,6 +38,17 @@ export default function Register() {
         `${api_url}api/auth/signup`,
         signInInputs
       );
+      const result = await signIn('credentials',{
+        redirect:false,
+        email:signInInputs.email,
+        password:signInInputs.password
+       })
+       if(result?.error){
+        console.log(result?.error)
+       }
+
+
+
       if(response.status===200){
           router.push('/user')
       }

@@ -21,7 +21,7 @@ export default function Layout({
       image: session?.user?.image ?? "/some-rondom.png",
       email: session?.user?.email ??  "john@email.com"
     }
-  console.log(user)
+  console.log(session)
     
     useEffect(()=>{
       setUserDetails(user)

@@ -11,7 +11,7 @@ interface NavigationItem {
 }
 
 const navigationItems: NavigationItem[] = [
-  { name: "Timeline", href: "/user/posts/id" },
+  { name: "Host Cypher", href: "/events/host" },
   { name: "Notifications", href: "/user/notifications" }
 ];
 
