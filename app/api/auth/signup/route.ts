@@ -21,7 +21,7 @@ export async function POST(request:Request){
   return NextResponse.json({msg:"created succesfully"})
 }catch(e){
     console.log(e)
-    return NextResponse.json({msg:"error occused"})
+    return NextResponse.json({msg:"error occured"})
   }
 
   }

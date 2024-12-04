@@ -9,39 +9,24 @@ datasource db {
 }
 
 model User {
-  id         String       @id @default(uuid())
-  email      String    @unique
+  id         String  @id @default(uuid())
+  email      String  @unique
   name       String?
   h_password String
   avatar     String?
-  posts      Post[]
-  comments   Comment[]
-  likes      Like[]
 }
 
-model Post {
-  postId    String    @id @default(cuid())
-  profile   User      @relation(fields: [profileId], references: [id])
-  profileId String
-  fileUrl   String?
-  caption   String?
-  comments  Comment[]
-  likes     Like[]
+enum EventFees {
+  free
+  paid
 }
 
-model Comment {
-  id      String @id @default(cuid())
-  content String
-  ProfileId  String
-  user    User   @relation(fields: [ProfileId], references: [id])
-  postId  String
-  post    Post   @relation(fields: [postId], references: [postId])
-}
-
-model Like {
-  id     String @id @default(cuid())
-  ProfileId String
-  user   User   @relation(fields: [ProfileId], references: [id])
-  postId String
-  post   Post   @relation(fields: [postId], references: [postId])
+model Event {
+  id          String    @id @default(uuid())
+  name        String
+  description String
+  date        DateTime
+  location    String
+  amount      Int
+  fees        EventFees
 }

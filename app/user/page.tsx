@@ -4,9 +4,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-
-import { useRecoilState } from "recoil";
-import { userDetailsAtom } from "@/states/atoms/userAtoms";
 import Loading from "./loading";
 
 
@@ -16,13 +13,13 @@ export default function UserHome() {
   const router = useRouter()
   useEffect(() => {
    
-    if (status === "unauthenticated") {
+    if (session.status === "unauthenticated") {
       console.log("user not logged in")
       router.push('/auth');
     }
-  }, [status, router]);
+  }, [session.status, router]);
 
-  if (status === 'loading') {
+  if (session.status === 'loading') {
     return <Loading />;
   }
 

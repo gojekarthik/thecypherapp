@@ -19,7 +19,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useRecoilState } from "recoil";
 import { signUpInputsAtom } from "@/states/atoms/userAtoms";
 import axios from "axios";
-import {signIn, useSession} from "next-auth/react"
+import {signIn} from "next-auth/react"
 import { useRouter } from "next/navigation";
 import { api_url } from "@/utils/const";
 

@@ -1,9 +1,8 @@
-"use client"
+"use client";
 import { cn } from "@/lib/utils";
 import { mainNavigationAtom } from "@/states/atoms/mainComponentAtom";
-
-
 import { useRecoilState } from "recoil";
+import Link from "next/link";
 
 interface NavigationItem {
   name: string;
@@ -11,21 +10,22 @@ interface NavigationItem {
 }
 
 const navigationItems: NavigationItem[] = [
-  { name: "Host Cypher", href: "/events/host" },
-  { name: "Notifications", href: "/user/notifications" }
+  { name: "Host Cypher", href: "/user/events/host" },
 ];
 
 export function Navigation() {
   const [mainComponent, setMainComponent] = useRecoilState(mainNavigationAtom);
 
+  // Handler to set the main component
+  const handleNavigation = (componentName: string) => {
+    setMainComponent(componentName);
+  };
+
   return (
     <nav className="flex flex-col gap-2 p-4">
-      <a
-        key="Training Session"
+      <Link
         href="/user/training"
-        onClick={() => {
-          setMainComponent("Training Session");
-        }}
+        onClick={() => handleNavigation("Training Session")}
         className={cn(
           "flex items-center gap-2 rounded-lg px-3 py-2 text-lg transition-colors",
           "hover:bg-accent hover:text-[#8661C1]",
@@ -33,14 +33,13 @@ export function Navigation() {
         )}
       >
         Training Session
-      </a>
+      </Link>
+
       {navigationItems.map((item) => (
-        <a
+        <Link
           key={item.name}
           href={item.href}
-          onClick={() => {
-            setMainComponent("Training Session");
-          }}
+          onClick={() => handleNavigation(item.name)}
           className={cn(
             "flex items-center gap-2 rounded-lg px-3 py-2 text-lg transition-colors",
             "hover:bg-accent hover:text-[#8661C1]",
@@ -48,7 +47,7 @@ export function Navigation() {
           )}
         >
           {item.name}
-        </a>
+        </Link>
       ))}
     </nav>
   );
